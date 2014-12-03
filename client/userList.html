@@ -1,0 +1,48 @@
+<template name="userList">
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{listName}}</div>
+
+        <!-- Table -->
+        <table class="table table-condensed table-striped table-bordered table-hover">
+            <tbody>
+            {{#each list}}
+                {{>userListItem}}
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+</template>
+
+
+<template name="userListItem">
+    <tr>
+        <td>{{this.no}}</td>
+        <td>{{this.name}}{{#if this.star}} [Star]{{/if}}</td>
+        <td>{{this.email}}</td>
+        <td>
+            <button type="button" name="star" class="btn btn-default btn-small">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+            </button>
+						<button type="button" name="delete" class="btn btn-warning btn-small">
+							Delete
+						</button>
+        </td>
+    </tr>
+</template>
+
+<template name="userInput">
+	<div class="well">
+		Number : <input type="text" class="form-controll" name="no"><br><br>
+		Name    &nbsp;  &nbsp;: <input type="text" class="form-controll" name="name"><br><br>
+		Email   &nbsp;  &nbsp;: <input type="text" class="form-controll" name="email"><br><br>
+		<button class="btn btn-success btn-small">Yahoo ~ !!</button>
+	</div>
+</template>
+
+
+
+
+
